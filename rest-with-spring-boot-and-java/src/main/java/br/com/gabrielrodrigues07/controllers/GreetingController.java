@@ -1,6 +1,6 @@
-package GabrielRodrigues07.rest_with_spring_boot_and_java.controllers;
+package br.com.gabrielrodrigues07.controllers;
 
-import GabrielRodrigues07.rest_with_spring_boot_and_java.model.Greeting;
+import br.com.gabrielrodrigues07.model.Greeting;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

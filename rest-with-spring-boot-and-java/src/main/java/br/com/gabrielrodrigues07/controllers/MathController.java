@@ -1,5 +1,6 @@
-package GabrielRodrigues07.rest_with_spring_boot_and_java.controllers;
+package br.com.gabrielrodrigues07.controllers;
 
+import br.com.gabrielrodrigues07.exceptions.UnsupportedMathOperationException;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +18,7 @@ public class MathController {
     ) {
 
         if (!isNumeric(numberOne) || !isNumeric(numberTwo)) {
-            throw new IllegalArgumentException("One or two of the numbers provided are not in the correct format!!");
+            throw new UnsupportedMathOperationException("One or two of the numbers provided are not in the correct format!!");
         }
 
         return convertToDuble(numberOne) + convertToDuble(numberTwo);
