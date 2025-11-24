@@ -1,4 +1,4 @@
-package GabrielRodrigues07.rest_with_spring_boot_and_java;
+package br.com.gabrielrodrigues07;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
