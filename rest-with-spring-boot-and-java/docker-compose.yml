@@ -1,0 +1,16 @@
+services:
+  database:
+    image: mysql:latest
+    container_name: mysql-container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: mysecretpw
+      MYSQL_DATABASE: mydatabase
+    ports:
+      - "3306:3306" # Map host port 3306 to container port 3306
+    volumes:
+      - mysql-data:/var/lib/mysql # Persist data in a Docker volume
+      # Optional: mount initialization scripts as before
+      # - ./db-init-scripts:/docker-entrypoint-initdb.d
+volumes:
+  mysql-data:
