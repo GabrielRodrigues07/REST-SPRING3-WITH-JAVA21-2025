@@ -1,6 +1,6 @@
 package br.com.gabrielrodrigues07.util;
 
-import br.com.gabrielrodrigues07.exceptions.UnsupportedMathOperationException;
+import br.com.gabrielrodrigues07.exceptions.ResourceNotFoundException;
 
 import java.util.Objects;
 
@@ -8,7 +8,7 @@ public class ValidateAndConverterUtils {
 
     public static Double convertToDuble(String strNumber) {
         if (!ValidateAndConverterUtils.isNumeric(strNumber)) {
-            throw new UnsupportedMathOperationException(String.format("Value '%s' isn't a number", strNumber));
+            throw new ResourceNotFoundException(String.format("Value '%s' isn't a number", strNumber));
         }
 
         String number = strNumber.replace(",", ".");
