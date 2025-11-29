@@ -3,6 +3,7 @@ package br.com.gabrielrodrigues07.controllers;
 import br.com.gabrielrodrigues07.model.Person;
 import br.com.gabrielrodrigues07.services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,6 +42,7 @@ public class PersonController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable("id") Long id) {
         personService.delete(id);
     }
