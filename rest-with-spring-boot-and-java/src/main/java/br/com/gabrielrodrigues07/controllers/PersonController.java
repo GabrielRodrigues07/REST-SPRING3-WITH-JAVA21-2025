@@ -1,6 +1,7 @@
 package br.com.gabrielrodrigues07.controllers;
 
 import br.com.gabrielrodrigues07.model.Person;
+import br.com.gabrielrodrigues07.model.dto.PersonDTO;
 import br.com.gabrielrodrigues07.services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,27 +19,27 @@ public class PersonController {
 
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Person findById(@PathVariable("id") Long id) {
+    public PersonDTO findById(@PathVariable("id") Long id) {
         return personService.findById(id);
     }
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Person> findAll() {
+    public List<PersonDTO> findAll() {
         return personService.findAll();
     }
 
     @RequestMapping(method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Person create(@RequestBody Person person) {
-        return personService.create(person);
+    public PersonDTO create(@RequestBody PersonDTO personDTO) {
+        return personService.create(personDTO);
     }
 
     @RequestMapping(method = RequestMethod.PUT,
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Person update(@RequestBody Person person) {
-        return personService.update(person);
+    public PersonDTO update(@RequestBody PersonDTO personDTO) {
+        return personService.update(personDTO);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
