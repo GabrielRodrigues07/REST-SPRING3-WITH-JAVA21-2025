@@ -1,7 +1,7 @@
 package br.com.gabrielrodrigues07.controllers;
 
-import br.com.gabrielrodrigues07.model.Person;
-import br.com.gabrielrodrigues07.model.dto.PersonDTO;
+import br.com.gabrielrodrigues07.model.dto.v1.PersonDTO;
+import br.com.gabrielrodrigues07.model.dto.v2.PersonDTOV2;
 import br.com.gabrielrodrigues07.services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,8 +31,16 @@ public class PersonController {
     @RequestMapping(method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public PersonDTO create(@RequestBody PersonDTO personDTO) {
+    public PersonDTO createV1(@RequestBody PersonDTO personDTO) {
         return personService.create(personDTO);
+    }
+
+    @RequestMapping(value = "/v2",
+            method = RequestMethod.POST,
+            produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    public PersonDTOV2 createV2(@RequestBody PersonDTOV2 personDTO) {
+        return personService.createV2(personDTO);
     }
 
     @RequestMapping(method = RequestMethod.PUT,

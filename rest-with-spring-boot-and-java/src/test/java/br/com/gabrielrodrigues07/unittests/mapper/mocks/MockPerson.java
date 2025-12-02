@@ -2,7 +2,7 @@ package br.com.gabrielrodrigues07.unittests.mapper.mocks;
 
 
 import br.com.gabrielrodrigues07.model.Person;
-import br.com.gabrielrodrigues07.model.dto.PersonDTO;
+import br.com.gabrielrodrigues07.model.dto.v1.PersonDTO;
 
 import java.util.ArrayList;
 import java.util.List;
