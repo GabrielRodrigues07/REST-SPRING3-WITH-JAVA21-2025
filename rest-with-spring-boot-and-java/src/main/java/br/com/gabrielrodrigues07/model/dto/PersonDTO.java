@@ -1,4 +1,4 @@
-package br.com.gabrielrodrigues07.model.dto.v1;
+package br.com.gabrielrodrigues07.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;

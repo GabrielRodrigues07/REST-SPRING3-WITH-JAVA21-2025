@@ -1,7 +1,7 @@
 package br.com.gabrielrodrigues07.unittests.mapper;
 
 import br.com.gabrielrodrigues07.model.Person;
-import br.com.gabrielrodrigues07.model.dto.v1.PersonDTO;
+import br.com.gabrielrodrigues07.model.dto.PersonDTO;
 import br.com.gabrielrodrigues07.unittests.mapper.mocks.MockPerson;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

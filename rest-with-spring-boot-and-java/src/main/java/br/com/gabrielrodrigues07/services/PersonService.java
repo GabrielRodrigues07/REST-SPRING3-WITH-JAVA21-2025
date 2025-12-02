@@ -2,8 +2,7 @@ package br.com.gabrielrodrigues07.services;
 
 import br.com.gabrielrodrigues07.exceptions.ResourceNotFoundException;
 import br.com.gabrielrodrigues07.model.Person;
-import br.com.gabrielrodrigues07.model.dto.v1.PersonDTO;
-import br.com.gabrielrodrigues07.model.dto.v2.PersonDTOV2;
+import br.com.gabrielrodrigues07.model.dto.PersonDTO;
 import br.com.gabrielrodrigues07.repositories.PersonRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -49,15 +48,6 @@ public class PersonService {
         Person personSaved = personRepository.save(person);
 
         return parseObject(personSaved, PersonDTO.class);
-    }
-
-    public PersonDTOV2 createV2(PersonDTOV2 personDTO) {
-        logger.info("Creating one Person V2!!");
-
-        Person person = parseObject(personDTO, Person.class);
-        Person personSaved = personRepository.save(person);
-
-        return parseObject(personSaved, PersonDTOV2.class);
     }
 
     public PersonDTO update(PersonDTO personDTO) {
